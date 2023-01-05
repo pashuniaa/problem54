@@ -22,4 +22,9 @@ public class Card {
     public void setCardSuite(String cardSuite) {
         this.cardSuite = cardSuite;
     }
+
+    @Override
+    public String toString() {
+        return cardRank+cardSuite;
+    }
 }

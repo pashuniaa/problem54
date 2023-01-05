@@ -1,4 +1,4 @@
-public enum CardRank {
+public enum VALUE {
     //2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
     two(2),
     three(3),
@@ -8,16 +8,16 @@ public enum CardRank {
     seven(7),
     eight(8),
     nine(9),
-    ten(10),
+    T(10),
     J(11),
     Q(12),
     K(13),
     A(14);
 
-    int rankNumber;
+    int valueNumber;
 
-    CardRank(int rankNumber) {
-        this.rankNumber = rankNumber;
+    VALUE(int valueNumber) {
+        this.valueNumber = valueNumber;
     }
 
 }
