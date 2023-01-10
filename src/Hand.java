@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Hand {
@@ -19,13 +16,21 @@ public class Hand {
         return playerHandCards.stream().collect(Collectors.groupingBy(Card::getCardRank));
     }
 
+    public static Map<RANK, List<Integer>> getSortedHandByRank(List<Card> playerHandCards) {
+        Map<String, List<Card>> groupedCards = getGroupedCards(playerHandCards);
+        List<Integer> sortedCardRanks = getSortedHandRanks(groupedCards);
+        RANK handRank = getHandRank(playerHandCards);
+
+        Map<RANK, List<Integer>> result = new HashMap<>();
+        result.put(handRank, sortedCardRanks);
+        return result;
+    }
+
     public static RANK getHandRank(List<Card> playerHandCards) {
         RANK handRank = RANK.HIGH_CARD;
-        Map<String, List<Card>> groupedCards=getGroupedCards(playerHandCards);
+        Map<String, List<Card>> groupedCards = getGroupedCards(playerHandCards);
 
         List<Integer> sortedCardRanks = getSortedHandRanks(groupedCards);
-        System.out.println("SORTED CARD RANK!");
-        System.out.println(sortedCardRanks);
 
         int HIGH_CARD_RANK = Collections.max(sortedCardRanks);
 
@@ -93,11 +98,8 @@ public class Hand {
         }
         //HIGH CARD
         else {
-            System.out.println("High card's value is " + HIGH_CARD_RANK);
             handRank = RANK.HIGH_CARD;
         }
-
-        System.out.println("HAND'S RANK: " + handRank);
 
         return handRank;
     }
@@ -119,13 +121,11 @@ public class Hand {
 
         String suit = getAllCards.get(0).getCardSuite();
         for (Card c : getAllCards) {
-            if (!c.getCardSuite().equals(suit)){
-                System.out.println("Current card's suit: "+c.getCardSuite()+" is not equal to suit "+suit);
+            if (!c.getCardSuite().equals(suit)) {
                 return false;
             }
         }
 
-        System.out.println("HAND's SUIT: "+suit);
         return true;
     }
 

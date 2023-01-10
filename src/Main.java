@@ -1,15 +1,8 @@
-import java.util.*;
-
 public class Main {
     public static void main(String[] args) {
-
-        Map<String, List<Hand>> pokerHands = FileParser.getHands("poker");
-        List<Hand> playerHands = pokerHands.get("secondPlayerHands");
-
-        for (Hand h:playerHands) {
-            List<Card> playerCards=h.getCardHand();
-            System.out.println("\n"+playerCards);
-            Hand.getHandRank(playerCards);
-        }
+        Comparator c=new Comparator();
+        c.calculateWins();
+        System.out.println("First Player Wins Score: "+c.getFirstPlayerTotalScore());
+        System.out.println("Second Player Wins Score: "+c.getSecondPlayerTotalScore());
     }
 }
