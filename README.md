@@ -12,7 +12,7 @@ the first player's hand is the same as the second player's one, in that case the
 High Card. Once again, if both values at the highest index are equal, it descends to the lower index and checks again. 
 
 For every superior Rank or a High Card, the program increases player's PlayerScore counter by 1. 
-Then it prints out both player's score.
+Then it prints out both players score.
 
 TRICKY PARTS:
 
