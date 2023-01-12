@@ -25,6 +25,6 @@ Map<String, List<Card>> map= playerHandCards.stream().collect(Collectors.groupin
 
 WHAT I WOULD CHANGE IN MY CODE:
 
-I would create enums for card object variables Suit and Value. That wouldn't add much, but I think the code would be more versatile when expanding this project to the whole
+I would create enums for card object variables Suit and Value. That wouldn't add much, but I think the code would be more versatile when expanding this project to the full
 poker game. The reason why I haven't done that is that the only times when I have used those variables is when initiating a new Card object. For example the Rank enum was 
 needed because I have used it's values to check the rank's seperiority, and it really improves code readability.   
