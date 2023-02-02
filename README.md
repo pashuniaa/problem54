@@ -1,5 +1,6 @@
 # problem54
-    
+POKER GAME -> COMPARES EACH PLAYER'S HAND OF CARD AND DETERMINES WHO HAS STRONGER ONE    
+
 HOW THE SOLUTION WORKS:
     
 FileParser class scans the poker.txt file and creates a new Map<String, List<Hand>> which contains two Strings as keys (firstPlayerHands, secondPlayerHands).
